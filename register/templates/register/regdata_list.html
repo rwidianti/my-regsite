@@ -4,5 +4,14 @@
 </head>
 <body>
 <h1>Inixindo Registration Form</h1>
+<br>
+<br>
+{% for regdata in regdatas %}
+    <div>
+        <h1>nama: {{ regdata.nama }}</h1>
+        <p>email : {{ regdata.email }}</p>
+        <p>telpon : {{ regdata.tlp }}</p>
+    </div>
+{% endfor %}
 </body>
 </html>
