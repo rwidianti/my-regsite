@@ -1,17 +1,30 @@
-<html>
-<head>
-<title>Reg Data List</title>
-</head>
-<body>
-<h1>Inixindo Registration Form</h1>
+{% extends 'register/base.html' %}
+{% block content %}
 <br>
 <br>
-{% for regdata in regdatas %}
-    <div>
-        <h1>nama: {{ regdata.nama }}</h1>
-        <p>email : {{ regdata.email }}</p>
-        <p>telpon : {{ regdata.tlp }}</p>
-    </div>
+
+<a class="btn btn-success" href="{% url 'regdata_new' %}" class="top-menu">
+<span class="glyphicon glyphicon-plus"></span>Tambah</a>
+
+ <div class="table-responsive">          
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nama</th>
+        <th>Email</th>
+        <th>Tlp</th>
+      </tr>
+    </thead>
+    <tbody>
+	{% for regdata in regdatas %}
+      <tr>
+        <td>nama: {{ regdata.nama }}</td>
+        <td>email : {{ regdata.email }}</td>
+        <td>telpon : {{ regdata.tlp }}</td>
+      </tr>
+    
 {% endfor %}
-</body>
-</html>
+</tbody>
+  </table>
+  
+{% endblock %}
